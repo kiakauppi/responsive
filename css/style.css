@@ -44,6 +44,8 @@ div#content section{
     display: inherit;
     flex-direction: row;
     flex-wrap: wrap;
+    border-right: 1px solid var(--dark-foreground-color);
+    margin: var(--general-padding) 0 var(--general-margin) 0;
 }
 div#content aside{
     width: 20vw;
@@ -87,6 +89,15 @@ article div{
     border: 1px solid var(--grey-foreground-color);
 }
 
+article h3{
+    margin: var(--general-margin);
+}
+
+article p{
+    margin: var(--general-margin);
+    line-height: 1.5;
+}
+
 article div img{
     height: 500px;
     width: 100%;
@@ -109,4 +120,33 @@ footer{
 
 footer p{
     color: var(--light-foreground-color);
+}
+
+@media only screen and (max-width: 1200px){
+    div#content{
+        flex-direction: column;
+    }
+
+    div#content section{
+        width: 100vw;
+        flex-direction: row;
+    }
+    div#content aside{
+        width: 100vw;
+        padding-top: var(--general-padding);
+        padding-left: calc(var(--general-padding) /2);
+    }
+    article{
+        flex: 50%;
+    }
+
+    article div img{
+        height: 350px;
+    }
+}
+
+@media only screen and (max-width: 992px){
+    div#content section{
+        flex-direction: column;
+    }
 }
